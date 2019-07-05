@@ -1,0 +1,27 @@
+{
+  "name": "express-jwt-auth",
+  "version": "1.0.0",
+  "description": "Backend to supply/verify json web tokens",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caleb Lemone",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "swagger-jsdoc": "^3.2.9",
+    "swagger-ui-express": "^4.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
+  }
+}
