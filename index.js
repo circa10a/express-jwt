@@ -1,6 +1,5 @@
 const express = require('express');
 const helmet = require('helmet');
-const path = require('path');
 
 const app = express();
 const { PORT } = process.env;

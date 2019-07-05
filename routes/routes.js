@@ -6,7 +6,6 @@ const basicAuth = require('express-basic-auth');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 
-
 const invalidTokenHandler = require('../middleware/invalidTokenHandler');
 const { privateKey, publicKey } = require('../lib/keys');
 const { jwtConfig, basicAuthConfig, swaggerConfig } = require('../config/config');
