@@ -18,6 +18,12 @@ npm install
 npm start
 ```
 
+### Docker
+
+```shell
+docker run -d --name express-jwt -p 8000:8000 circa10a/express-jwt
+```
+
 Then navigate to http://localhost:8000/ to see the swagger api docs.
 
 ## Configuration
