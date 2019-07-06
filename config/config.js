@@ -5,7 +5,7 @@ module.exports = {
       admin: 'admin',
       guest: 'password',
     },
-    unauthorizedResponse: { error: 'Unauthorized' },
+    unauthorizedResponse: { status: 'Unauthorized' },
   },
   jwtConfig: {
     expiresIn: '1h',

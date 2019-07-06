@@ -49,13 +49,13 @@ router.get('/', (req, res) => {
    *              schema:
    *                type: object
    *                properties:
-   *                  error:
+   *                  status:
    *                    type: string
    *                    description: authentication status
    */
 router.get('/login', basicAuth(basicAuthConfig), (req, res) => {
   const { user } = req.auth;
-  const token = jwt.sign({ user }, privateKey, jwtConfig); // config => expire time, algorithm
+  const token = jwt.sign({ user, data: 'some example data' }, privateKey, jwtConfig); // config => expire time, algorithm
   res.json({ user, token });
 });
 
@@ -75,9 +75,25 @@ router.get('/login', basicAuth(basicAuthConfig), (req, res) => {
    *             schema:
    *               type: object
    *               properties:
-   *                 success:
+   *                 status:
    *                   type: string
    *                   description: authorization status
+   *                 jwtData:
+   *                   type: object
+   *                   description: jwt data
+   *                   properties:
+   *                     user:
+   *                       type: string
+   *                       description: username
+   *                     data:
+   *                       type: string
+   *                       description: example data sent back from server
+   *                     iat:
+   *                       type: integer
+   *                       description: issued at timestamp
+   *                     exp:
+   *                       type: integer
+   *                       desscription: expires at timestamp
    *       '401':
    *         description: returns authentication status
    *         content:
@@ -85,13 +101,13 @@ router.get('/login', basicAuth(basicAuthConfig), (req, res) => {
    *             schema:
    *               type: object
    *               properties:
-   *                 error:
+   *                 status:
    *                   type: string
    *                   description: authorization/token validity status
    */
 router.get('/protected', expressJwt({ secret: publicKey }), invalidTokenHandler, (req, res) => {
   if (req.user) {
-    res.status(200).json({ success: 'Authorized' });
+    res.status(200).json({ status: 'Authorized', jwtData: req.user });
   }
 });
 

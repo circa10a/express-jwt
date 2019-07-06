@@ -4,8 +4,9 @@ const handleInvalidToken = ((err, req, res, next) => {
     console.error(err);
   }
   if (err.name === 'UnauthorizedError') {
-    res.status(401).json({ error: 'invalid token' });
+    res.status(401).json({ status: 'invalid token' });
   }
+  next();
 });
 
 module.exports = handleInvalidToken;

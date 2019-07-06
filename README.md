@@ -30,7 +30,7 @@ Default listens on port `8000`, but can be changed by specifying a `PORT` enviro
 
 To obtain your JWT, you must authenticate against `/login` with Basic Auth.
 
-There are 2 hardcoded sample users in `config/config.js` than be used. You can also easily append to the object for more fake users.
+There are 2 hardcoded sample users in `config/config.js` that can be used. You can also easily append to the object for more fake users.
 
 **Users**
 
