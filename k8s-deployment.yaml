@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-jwt-deployment
+  labels:
+    app: express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+      - name: express-jwt
+        image: circa10a/express-jwt
+        readinessProbe:
+          httpGet:
+            path: /healthCheck
+            port: express-port
+          initialDelaySeconds: 5
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /healthCheck
+            port: express-port
+          initialDelaySeconds: 5
+          periodSeconds: 15
+        ports:
+        - name: express-port
+          containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-jwt-service
+spec:
+  selector:
+    app: express
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: express-port
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: express-jwt-ingress
+spec:
+  backend:
+    serviceName: express-jwt-service
+    servicePort: 80

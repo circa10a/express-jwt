@@ -16,8 +16,13 @@ const router = express.Router();
 
 // Ensure user gets to api docs
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 router.get('/', (req, res) => {
   res.redirect('/api-docs');
+});
+
+router.get('/healthCheck', (req, res) => {
+  res.sendStatus(200);
 });
 
 /**
