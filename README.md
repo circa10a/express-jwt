@@ -24,6 +24,12 @@ npm start
 docker run -d --name express-jwt -p 8000:8000 circa10a/express-jwt
 ```
 
+### Kubernetes
+
+```
+kubectl apply -f https://raw.githubusercontent.com/circa10a/express-jwt/master/k8s-deployment.yaml
+```
+
 Then navigate to http://localhost:8000/ to see the swagger api docs.
 
 ## Configuration
