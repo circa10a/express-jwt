@@ -1,3 +1,5 @@
+const { version } = require('../package.json');
+
 module.exports = {
   basicAuthConfig: {
     challenge: true,
@@ -16,7 +18,7 @@ module.exports = {
       openapi: '3.0.1',
       info: {
         title: 'Express-JWT',
-        version: '1.0.0',
+        version,
       },
       basePath: '/',
       components: {
