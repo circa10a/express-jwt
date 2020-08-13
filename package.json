@@ -1,6 +1,6 @@
 {
   "name": "express-jwt-auth",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Backend to supply/verify json web tokens",
   "main": "index.js",
   "scripts": {
@@ -13,10 +13,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
-    "express-jwt": "^5.3.1",
-    "helmet": "^3.23.3",
+    "express-jwt": "^6.0.0",
+    "helmet": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
-    "swagger-jsdoc": "^3.2.9",
+    "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {

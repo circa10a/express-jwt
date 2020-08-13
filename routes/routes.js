@@ -110,7 +110,7 @@ router.get('/login', basicAuth(basicAuthConfig), (req, res) => {
    *                   type: string
    *                   description: authorization/token validity status
    */
-router.get('/protected', expressJwt({ secret: publicKey }), invalidTokenHandler, (req, res) => {
+router.get('/protected', expressJwt({ secret: publicKey, algorithms: [jwtConfig.algorithm] }), invalidTokenHandler, (req, res) => {
   if (req.user) {
     res.status(200).json({ status: 'Authorized', jwtData: req.user });
   }
