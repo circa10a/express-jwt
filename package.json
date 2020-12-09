@@ -1,6 +1,6 @@
 {
   "name": "express-jwt-auth",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Backend to supply/verify json web tokens",
   "main": "index.js",
   "scripts": {
@@ -14,14 +14,14 @@
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "express-jwt": "^6.0.0",
-    "helmet": "^4.0.0",
+    "helmet": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
-    "swagger-jsdoc": "^4.0.0",
-    "swagger-ui-express": "^4.0.7"
+    "swagger-jsdoc": "^6.0.0-rc.3",
+    "swagger-ui-express": "^4.1.5"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0"
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }

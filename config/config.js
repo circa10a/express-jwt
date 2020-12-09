@@ -15,7 +15,7 @@ module.exports = {
   },
   swaggerConfig: {
     definition: {
-      openapi: '3.0.1',
+      openapi: '3.0.3',
       info: {
         title: 'Express-JWT',
         version,
